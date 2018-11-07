@@ -9,6 +9,10 @@ We'll work around with topics like:
 - **Arrow** function
 - **Rest operator** 
 - **Spread operator**
+- **Destructing**
+- **Generators**
+- **Coroutine**
+- **Async / Await**
 - And more..
 
 Let me know if you have any suggestion or pull request to it!
