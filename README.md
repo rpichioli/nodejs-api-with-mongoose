@@ -1,18 +1,28 @@
-# es6-features-demos
+# nodejs-api-with-mongoose
 >In development phase
 
-The idea is to show some **Next Generation JavaScript** stuff working and how to implement it.
+This repository shows **in a simple way** how to build REST API in it's different methods and manage/persist data into **MongoDB** database using **Mongoose** ORM.
 
-We'll work around with topics like:
-- **Class** (props, methods and inheritance),
-- **Array** (filter, map and others)
-- **Arrow** function
-- **Rest operator** 
-- **Spread operator**
-- **Destructing**
-- **Generators**
-- **Coroutine**
-- **Async / Await**
-- And more..
+### The repository idea ###
+This is a full basic CRUD (Create - Read - Update - Delete) .
 
-Let me know if you have any suggestion or pull request to it!
+### Understanding the project structure ###
+The NodeJS Express core file is located at the folder:
+```
+(root)/src/index.js
+```
+
+The database connection configuration file is located at the folder:
+```
+(root)/src/config/ ...
+```
+
+The model that represents the database table and the **index.js** to configure it are located at the folder:
+```
+(root)/src/models/ ...
+```
+
+The API is located at the folder:
+```
+(root)/src/routes/ ...
+```
