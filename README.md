@@ -7,22 +7,22 @@ This repository shows **in a simple way** how to build REST API in it's differen
 This is a full basic CRUD (Create - Read - Update - Delete) .
 
 ### Understanding the project structure ###
-The NodeJS Express core file is located at the folder:
+The NodeJS Express server core file is located at folder:
 ```
 (root)/src/index.js
 ```
 
-The database connection configuration file is located at the folder:
+The database connection configuration file is located at folder:
 ```
 (root)/src/config/ ...
 ```
 
-The model that represents the database table and the **index.js** to configure it are located at the folder:
+We will work with modules that export models related to schemas, so we can import it within API routes when you need. The model represents a real collection you have in MongoDB, mapping and typing each document data that will be saved within it. Look at folder:
 ```
 (root)/src/models/ ...
 ```
 
-The API is located at the folder:
+The API route is located at folder:
 ```
 (root)/src/routes/ ...
 ```
