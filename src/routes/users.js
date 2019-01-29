@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const lodash = require('lodash');
 // Model
-const Projects = require('../models/users');
+const Users = require('../models/users');
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
 	try {
-		Projects.find({}, (err, projects) => {
+		Users.find({}, (err, projects) => {
 			// Error returned
 			if (err) res.status(400).json({ error: "Invalid request, something went wrong!" });
 			// Invalid data received
@@ -41,7 +41,7 @@ router.get('/:id', (req, res) => {
 		_id = mongoose.Types.ObjectId(_id);
 
 		// Querying by document '$oid'
-		Projects.find({ _id }, (err, project) => {
+		Users.find({ _id }, (err, project) => {
 			// Error returned
 			if (err) res.status(400).json({ error: "Invalid request, something went wrong!" });
 			// Invalid data received
@@ -63,7 +63,7 @@ router.post('/', (req, res) => {
 		let { username, password, name, email, country } = req.body;
 		let _id = mongoose.Types.ObjectId(); // Generating new MongoDB _ID
 
-		Projects.create({ _id, username, password, name, email, country }, (err, user) => {
+		Users.create({ _id, username, password, name, email, country }, (err, user) => {
 			// Error returned
 			if (err) res.status(400).json({ error: "Invalid request, something went wrong!", err });
 			// Everything OK
@@ -82,7 +82,7 @@ router.put('/', (req, res) => {
 		let { _id, username, password, name, email, country } = req.body;
 
 		// Find the user by it's ID and update it
-		Projects.findByIdAndUpdate(
+		Users.findByIdAndUpdate(
 			_id,
 			{ $set: { username, password, name, email, country }}, // spotlight
 			{ new: true },
@@ -106,7 +106,7 @@ router.delete('/:id', (req, res) => {
 		const _id = req.params.id || null;
 		// Remove user by it's _ID
 		if (_id) {
-			Projects.deleteOne({ _id }, err => {
+			Users.deleteOne({ _id }, err => {
 				// Something wrong happens
 				if (err) res.status(400).json({ success: false, error: "Can't remove user!" });
 				// Everything OK
