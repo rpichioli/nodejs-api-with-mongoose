@@ -5,8 +5,7 @@ const usersSchema = mongoose.Schema({
 	username: String,
 	password: String,
 	name: String,
-	email: String,
-	country: String
+	email: String
 }, {
 	versionKey: false // Unable auto-version after persist database
 });
