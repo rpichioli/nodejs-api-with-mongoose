@@ -60,10 +60,10 @@ router.get('/:id', (req, res) => {
  */
 router.post('/', (req, res) => {
 	try {
-		let { username, password, name, email, country } = req.body;
+		let { username, password, name, email } = req.body;
 		let _id = mongoose.Types.ObjectId(); // Generating new MongoDB _ID
 
-		Users.create({ _id, username, password, name, email, country }, (err, user) => {
+		Users.create({ _id, username, password, name, email }, (err, user) => {
 			// Error returned
 			if (err) res.status(400).json({ error: "Invalid request, something went wrong!", err });
 			// Everything OK
@@ -79,12 +79,12 @@ router.post('/', (req, res) => {
  */
 router.put('/', (req, res) => {
 	try {
-		let { _id, username, password, name, email, country } = req.body;
+		let { _id, username, password, name, email } = req.body;
 
 		// Find the user by it's ID and update it
 		Users.findByIdAndUpdate(
 			_id,
-			{ $set: { username, password, name, email, country }}, // spotlight
+			{ $set: { username, password, name, email }},
 			{ new: true },
 			(err, user) => {
 				// Something wrong happens
@@ -113,7 +113,7 @@ router.delete('/:id', (req, res) => {
 				res.json({ success: true });
 			});
 		} else {
-			res.status(400).json({ error: "Source required to perform the search!" });
+			res.status(400).json({ error: "Identifier required to perform this action!" });
 		}
 	} catch (e) {
 		res.status(401).json({ error: "Unauthorized action!" });
