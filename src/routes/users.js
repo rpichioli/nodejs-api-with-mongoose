@@ -13,13 +13,13 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
 	try {
-		Users.find({}, (err, projects) => {
+		Users.find({}, (err, users) => {
 			// Error returned
 			if (err) res.status(400).json({ error: "Invalid request, something went wrong!" });
 			// Invalid data received
-			if (!projects) res.status(401).json({ error: "Unauthorized action!" });
+			if (!users) res.status(401).json({ error: "Unauthorized action!" });
 			// Everything OK
-			res.json({ success: true, projects });
+			res.json({ success: true, users });
 		});
 	} catch (e) {
 		res.status(401).json({ error: "Unauthorized action!" });
@@ -41,13 +41,13 @@ router.get('/:id', (req, res) => {
 		_id = mongoose.Types.ObjectId(_id);
 
 		// Querying by document '$oid'
-		Users.find({ _id }, (err, project) => {
+		Users.find({ _id }, (err, user) => {
 			// Error returned
 			if (err) res.status(400).json({ error: "Invalid request, something went wrong!" });
 			// Invalid data received
-			if (!project) res.status(401).json({ error: "Unauthorized action!" });
+			if (!user) res.status(401).json({ error: "Unauthorized action!" });
 			// Everything OK
-			res.json({ success: true, project });
+			res.json({ success: true, user });
 		});
 	} catch (e) {
 		res.status(401).json({ error: "Unauthorized action!" });

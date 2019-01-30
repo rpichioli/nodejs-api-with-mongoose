@@ -1,4 +1,5 @@
 const port = 2000;
+const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -27,7 +28,7 @@ const api_users = require('./routes/users');
 // - Root
 app.get('/', (req, res) => res.send('API services root directory, welcome!'));
 // - Users
-app.use('/auth/', api_auth);
+app.use('/users/', api_users);
 
 // Not allowed access setup
 app.use((req, res) => res.status(403).json({ error: 'Forbidden access! URL not allowed.' }));
