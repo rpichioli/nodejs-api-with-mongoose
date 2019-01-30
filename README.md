@@ -1,5 +1,4 @@
 # nodejs-api-with-mongoose
->In development phase
 
 This repository shows **in a simple way** how to build REST API in it's different methods and manage/persist data into **MongoDB** database using **Mongoose** ORM. 
 
