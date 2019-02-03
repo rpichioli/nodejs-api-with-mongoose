@@ -37,12 +37,12 @@ The "users" API route imported and registered into `index.js` is located at:
 (root)/src/routes/users.js
 ```
 
-#### Requirements
+### Requirements
 You must have **npm** in your OS by installing **NodeJS**, easily found at the official website.
 
 The **npm** is used to install the project dependencies and run it by command line.
 
-#### Running the React application
+### Running the React application
 First of all you must open your terminal and go to the ```/src/``` where you can see a **package.json**. 
 
 Now you need to install the npm dependencies using the command ```npm install```.
@@ -50,3 +50,7 @@ Now you need to install the npm dependencies using the command ```npm install```
 Finally you just must enter ```npm start``` to run the NodeJS Express application.
 
 And it's all!
+
+### Developed by
+
+Rodrigo Quiñones Pichioli, since Oct/2018
