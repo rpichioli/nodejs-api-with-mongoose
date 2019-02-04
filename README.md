@@ -49,7 +49,7 @@ Now you need to install the npm dependencies using the command ```npm install```
 
 Finally you just must enter ```npm start``` to run the NodeJS Express application.
 
-And it's all!
+That's all!
 
 ### Developed by
 
